@@ -1,11 +1,18 @@
 
 
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 
 import org.apache.http.Header;
-import org.apache.http.HttpHeaders;
+import org.apache.http.ParseException;
 import org.apache.http.client.methods.CloseableHttpResponse;
+import org.apache.http.util.EntityUtils;
+
+import com.fasterxml.jackson.databind.DeserializationFeature;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import entities.User;
 
 public class ResponseUtils {
 
@@ -64,4 +71,15 @@ public class ResponseUtils {
 				.anyMatch(header -> header.getName().equalsIgnoreCase(headerOfInterest));
 		
 	}
+	
+	public static User unmarshall(CloseableHttpResponse response, Class<User> clazz) throws ParseException, IOException {
+		
+		String jsonResponse = EntityUtils.toString(response.getEntity());
+		
+		return new ObjectMapper()
+				.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false)
+				.readValue(jsonResponse, clazz);
+	
+	}
+	
 }
