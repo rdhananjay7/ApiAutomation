@@ -16,6 +16,15 @@ import org.testng.annotations.Test;
 
 import WebAPIAutomation.WebAPIAutomation.ResponseUtils;
 
+
+/**
+ * 
+ * Class for the tests for testing the response headers
+ * @author Danny
+ *
+ */
+
+
 public class ResponseHeaders extends BaseClass {
 	
 
