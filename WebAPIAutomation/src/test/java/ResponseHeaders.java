@@ -14,12 +14,10 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.entity.ContentType;
 import org.testng.annotations.Test;
 
-import WebAPIAutomation.WebAPIAutomation.ResponseUtils;
-
 
 /**
  * 
- * Class for the tests for testing the response headers
+ * Class
  * @author Danny
  *
  */

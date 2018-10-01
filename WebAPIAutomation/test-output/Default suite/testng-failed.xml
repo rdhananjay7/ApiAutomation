@@ -3,13 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="ResponseHeaders">
+      <class name="BodyTestWithSimpleMap">
         <methods>
           <include name="setup"/>
+          <include name="returnCorrectId"/>
           <include name="closeResources"/>
-          <include name="checkIfHeaderIsPresent"/>
         </methods>
-      </class> <!-- ResponseHeaders -->
+      </class> <!-- BodyTestWithSimpleMap -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
